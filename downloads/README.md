@@ -1,5 +1,21 @@
 # YLM統合版のダウンロード
 
+## v0.6 登録・競合割当・シーングラフ更新（2026-10-21）
+
+[改良版本体ZIP](https://github.com/timobi411/timobi/raw/refs/heads/master/downloads/ylm_scene_graph_integrated_v06_registration_scene_graph.zip) · [本体SHA-256](ylm_scene_graph_integrated_v06_registration_scene_graph.zip.sha256)
+
+[exp01の詳細結果ZIP](https://github.com/timobi411/timobi/raw/refs/heads/master/downloads/ylm_v06_exp01_registration_results.zip) · [SHA-256](ylm_v06_exp01_registration_results.zip.sha256)
+
+[exp02の詳細結果ZIP](https://github.com/timobi411/timobi/raw/refs/heads/master/downloads/ylm_v06_exp02_registration_results.zip) · [SHA-256](ylm_v06_exp02_registration_results.zip.sha256)
+
+v0.5.1.2の保存候補を維持して、4DOF/6DOF登録、全初期値・退化・曖昧性の監査、断片共有を考慮した主/補助割当、可視性評価、graph更新案の検証、atomicな実反映・重複防止・訂正履歴を実装しました。`run` は更新案まで、`apply` は別コマンドです。
+
+Ubuntu 22.04 / Python 3.10で新版51試験、凍結v0.5.1.2の53試験が成功。凍結B0の旧30ペア・240数値項目は許容誤差内で一致しました。合成データで実apply・bootstrap・形状version・故障復旧を検証し、実データ4時刻×E0/S0・E1/S1の8条件で処理と整合性検証を完了しました。
+
+**実データの同一性・移動・更新精度は未評価です。** 正式graph/model、独立したframe根拠、校正済み採用profileがないため、実データでは更新を保留しています。詳細ICPは各条件32ペアの予算で、残りを不一致へ変換していません。E1/S1を正式既定へ昇格させていません。
+
+本体を全体展開し、`ylm_scene_graph_integrated_v06/README_ja.md` の手順を実行してください。本体にはソース・合成全工程・旧B0再現・比較レポート・日本語手順を収録しています。実データの完全なrun/HTMLは追加2 ZIPを同じ場所へ展開すると `validation/real/` に追加されます。`validation/index.html` から閲覧できます。以前のZIPもそのまま残しています。
+
 ## v0.5.1.2 接触境界・候補拡張監査（2026-10-21）
 
 [改良版本体ZIPをダウンロード（約88.4 MB）](https://github.com/timobi411/timobi/raw/refs/heads/master/downloads/ylm_scene_graph_integrated_v0512_boundary_audit.zip)
