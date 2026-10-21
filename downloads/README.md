@@ -1,5 +1,23 @@
 # YLM統合版のダウンロード
 
+## v0.5.1.2 接触境界・候補拡張監査（2026-10-21）
+
+[改良版本体ZIPをダウンロード（約88.4 MB）](https://github.com/timobi411/timobi/raw/refs/heads/master/downloads/ylm_scene_graph_integrated_v0512_boundary_audit.zip)
+
+[本体のファイル画面](https://github.com/timobi411/timobi/blob/master/downloads/ylm_scene_graph_integrated_v0512_boundary_audit.zip) · [本体SHA-256](ylm_scene_graph_integrated_v0512_boundary_audit.zip.sha256)
+
+[E1～E4の詳細監査ログZIP（追加資料・約103.2 MB）](https://github.com/timobi411/timobi/raw/refs/heads/master/downloads/ylm_v0512_experiment_audit_logs.zip) · [ログSHA-256](ylm_v0512_experiment_audit_logs.zip.sha256)
+
+design-2仕様に基づき、全画像接触のfloat64幾何、3D最近傍と画像距離の別端点参照、未保存親も再構成できる全拡張イベント、実際の保存選択履歴を追加しました。旧採否を保つE0/S0が既定で、S1保存とE1～E4探索は別の明示的な比較実験です。
+
+4データ×5条件の全20実行で処理・監査が完了。E0では旧版と候補・保存順・画素ID・探索カウンタが一致し、保存候補は738／724／1,529／1,005件です。既存39件を変更せず新14件を加えた53テスト、全接触・イベント再照合、原本なし再生、Chromium操作を検証しました。
+
+exp02 T1の全6,400生成イベントでは、all/eligible最短距離の差102件、eligible限定なら距離上限超過34件を確認しました。従来復元できた750件では差9件・超過0件で研究室報告と一致します。実際の判定は従来のall linksのままで、shadow結果を採否へ使いません。未保存53点候補は総枠到達により未訪問だったことも履歴で確認できます。
+
+**まず本体を全体展開し、`ylm_scene_graph_integrated_v0512/validation/index.html` を開いてください。** 本体にソース・日本語手順・4ケースのE0完全出力・全条件比較・S0/S1結果を同梱しています。追加ZIPはE1～E4の完全な追加監査ログ・生成archiveで、元Viewer等を省いた記録集です。単独の再生用runではありません。
+
+研究室のproxy_pixel_ids等は未受領のため、330画素の代理領域の再現評価は未実施です。探索網羅・物体精度の成功とは扱いません。identity=UNKNOWN、registration=NOT_RUN、update=HELD、既存graph書込0を維持します。
+
 ## v0.5.1.1 候補探索改良（2026-10-20）
 
 [改良版ZIPをダウンロード（約77.8 MB）](https://github.com/timobi411/timobi/raw/refs/heads/master/downloads/ylm_scene_graph_integrated_v0511_candidate_search.zip)
