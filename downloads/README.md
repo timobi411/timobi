@@ -1,5 +1,23 @@
 # YLM統合版のダウンロード
 
+## vNext organized点群・候補・登録の統合改修（2026-10-23仕様書）
+
+[改良版本体ZIP（約70.3 MB）](https://github.com/timobi411/timobi/raw/refs/heads/master/downloads/ylm_scene_graph_integrated_vnext.zip) · [SHA-256](ylm_scene_graph_integrated_vnext.zip.sha256)
+
+[exp01 詳細結果（約93.7 MB）](https://github.com/timobi411/timobi/raw/refs/heads/master/downloads/ylm_vnext_exp01_results.zip) · [SHA-256](ylm_vnext_exp01_results.zip.sha256)
+
+[move_clear 詳細①（約88.8 MB）](https://github.com/timobi411/timobi/raw/refs/heads/master/downloads/ylm_vnext_move_clear_results_1.zip) · [SHA-256](ylm_vnext_move_clear_results_1.zip.sha256)
+
+[move_clear 詳細②（約78.5 MB）](https://github.com/timobi411/timobi/raw/refs/heads/master/downloads/ylm_vnext_move_clear_results_2.zip) · [SHA-256](ylm_vnext_move_clear_results_2.zip.sha256)
+
+本体から展開してください。追加結果は本体と同じ場所へ展開します。move_clearは①②の両方が必要です。それぞれ独立したZIPなので連結は不要です。手順は `ylm_scene_graph_integrated_vnext/README_ja.md`、資料入口は `validation/index.html` です。
+
+受領したv0.6.1／v0.4を保持し、時間統合、有限範囲の壁除去、非破壊の断片・複合候補、方向別境界、部品別ICP支持、独立ゲート、両側の共有画素を禁止する割当、更新案、全体・時刻別・登録後の表示を接続しました。容量停止後に保存結果から別フォルダーへ仕上げる機能もあります。
+
+新版29試験と既存61試験が成功。B0の30組・240項目、localの5指標を再現し、旧割当・サイズ／Shapeの8条件を比較しました。exp01は512組、move_clearは容量予算までの326組を評価し、全838組について仕上げ前後のJSON値一致を確認しています。
+
+**実データは部分評価で、グラフ適用は保留です。** move_clearの元候補生成は200件上限で部分完了ですが、別の候補のみの比較では15cmの全205件を保存しています。座標・重力・独立校正・物理的正解の未確認項目を、成功扱いにはしていません。数値計算版のコードと現行の仕上げ処理版を両方記録しています。
+
 ## v0.6 登録・競合割当・シーングラフ更新（2026-10-21）
 
 [改良版本体ZIP](https://github.com/timobi411/timobi/raw/refs/heads/master/downloads/ylm_scene_graph_integrated_v06_registration_scene_graph.zip) · [本体SHA-256](ylm_scene_graph_integrated_v06_registration_scene_graph.zip.sha256)
